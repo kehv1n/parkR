@@ -1,0 +1,19 @@
+.jumbotron {
+  height: 500px;
+  margin-top: 80px;
+  margin-bottom: 150px;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  height: 200px;
+
+}
+
+.right {
+  float: right;
+  width: 50%;
+  height: 200px;
+
+}
