@@ -9,27 +9,44 @@
       </div>
       <div class='col-xs-12 col-sm-5 col-lg-4'>
         <div class='login text-center'>
-          <div class='row'>
-              <p>Save time</p>
-              <button class='btn btn-primary'>Signup</button>
+          <div class="row One">
+            <img class = "parking" src="../assets/images/parking.png" alt="">
+            <h3> Park with parkR </h3>
+            <a routerLink="/signup"> Sign Up   >  </a>
           </div>
-            <hr>
-            <div class="signup">
+          <div class="row Two">
+          <hr style = "height:1px; width: 80%; background-color: black;">
+          <form class="form-signin">
+        <h2 class="form-signin-heading">Sign Up & Host</h2>
 
-              <div class='row'>
-                <p>Start Hosting</p>
-                <form >
-                  <input type="text" placeholder="Your name here"><br>
-                  <input type="text" placeholder="Your Car: ferrari, tesla etc.?"><br>
-                  <input type="text" placeholder="Do you have any leaking?"><br>
-                  <input type="text" placeholder="Password(only if you have nice car)"><br>
+      <div class="fullname">
 
-                  <button class='btn btn-primary'>Signup</button>
-                </form>
+        <input type="name" id="inputFirst" class="form-control" placeholder="Full Name" required autofocus>
+      </div>
+        <div class="loginCreds">
 
 
-              </div>
-            </div>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        </div>
+
+
+        <input type="email" id="inputCity" class="form-control" placeholder="Miami, FL" required autofocus>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+      <p class = "filler"> This is a bunch of random text down here that really serves no point other than to cover the remainding space of the form. Wow, this project really has me freakin tf out right now. Lets stay positive and hope for the best though. </p>
+
+
+
         </div>
       </div>
 

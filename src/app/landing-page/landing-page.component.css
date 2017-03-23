@@ -1,4 +1,4 @@
-body {
+;body {
   width: 100%;
 }
 .image{
@@ -48,9 +48,72 @@ h4 {
 }
 hr{
   border: 1px solid white;
+  margin: 10 auto;
+  margin-top:
 }
 input{
   width: 80%;
   margin: 5px;
   padding: 10px
+}
+
+.labelSignup {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.line {
+  border: 1 px solid white;
+  width: 50%;
+  display: inline;
+}
+
+.parking {
+  float: left;
+  width: 80px;
+}
+
+.One {
+  text-align: left;
+}
+
+.One > h3 {
+  margin-top: 20px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+.One > img {
+  margin: 10px;
+  margin-right: 25px;
+}
+
+.One > button {
+  font-size: 15px;
+  width: 60%;
+}
+
+.Two > p {
+  display: inline;
+}
+
+input {
+  width: 100%;
+}
+
+.form-signin-heading {
+  font-weight: 400px;
+  margin-bottom: 20px;
+}
+
+.filler {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 200;
+  margin-top: 40px;
+}
+
+.btn-block {
+  margin-bottom: 20px;
 }
