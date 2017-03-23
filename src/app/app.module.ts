@@ -9,6 +9,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { CitiesPageComponent } from './cities-page/cities-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ThreePartPageComponent } from './three-part-page/three-part-page.component';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     AppComponent,
     NavBarComponent,
     CitiesPageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    ThreePartPageComponent
   ],
   imports: [
     BrowserModule,

@@ -8,8 +8,8 @@
   float: left;
   width: 50%;
   height: 200px;
-
 }
+
 
 .right {
   float: right;
@@ -30,15 +30,46 @@
 h2 {
   font-size: 50px;
   text-align: left;
-  font-weight: lighter;
+  font-weight: 400;
   margin-top: 5px;
-  margin-left: 10px
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
 h4 {
   text-align: left;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 200;
   margin: 0;
   margin-left: 10px
+}
+
+h5 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-right: 35px;
+}
+
+
+.cash {
+  height: 150px;
+  float: right;
+  transform: rotate(7deg);
+  margin-right: 85px;
+  margin-left: 11px;
+}
+
+.hRight {
+  margin-left: 10px;
+}
+
+.container {
+  width: 80%;
+}
+
+li {
+  display: inline;
+  margin: 10px;
 }
