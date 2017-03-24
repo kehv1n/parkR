@@ -6,19 +6,29 @@ const User        = require('../models/user-model.js');
 
 const authRoutes  = express.Router();
 
+authRoutes.get('/users',(req, res, next) => {
+  User.find((err, userList) => {
+    if(err){
+      res.status(500).json({message: 'Something went wrong'});
+      return;
+    }
+    res.json(userList);
+  });
+});
+
 authRoutes.post('/signup', (req, res, next) => {
-  const username = req.body.username;
-  const nickname = req.body.nickname;
-  const password = req.body.password;
+  const fullname = req.body.fullname;
+  const email = req.body.email;
+  const encryptedPassword = req.body.encryptedPassword;
 
   //if blank
-  if(!username || password) {
-    res.status(400).json({message: 'Provide the username and password, dummy'});
+  if(!email || !encryptedPassword) {
+    res.status(400).json({message: 'Provide the email and password, dummy'});
     return;
   }
 
 
-  User.findOne({username }, '_id', (err, foundUser) => {
+  User.findOne({email}, '_id', (err, foundUser) => {
     //if error in the query
     if (err) {
       res.status(500).json({message: 'Something went wrong, sorry'});
@@ -33,12 +43,12 @@ authRoutes.post('/signup', (req, res, next) => {
 
     ///Encrypt the password before saving...
     const salt = bcrypt.genSaltSync(11);
-    const hashPass = bcrypt.hashSync(password, salt);
+    const hashPass = bcrypt.hashSync(encryptedPassword, salt);
 
     const theUser = new User({
-      username,
-      encryptedPassword: hashPass,
-      nickname
+      fullname,
+      email,
+      encryptedPassword: hashPass
     });
     //save user
     theUser.save((err) => {
@@ -69,7 +79,7 @@ authRoutes.post('/login', (req, res, next) => {
 
     }
 
-    if (!theUSer) {
+    if (!theUser) {
       res.status(401).json({message: failureDetails});
       return;
     }

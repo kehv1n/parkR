@@ -2,15 +2,18 @@
   const Schema = mongoose.Schema;
 
   const userSchema = new Schema({
-    fullname: String,
-    email: String,
-    phoneNumber: Number,
-    Car : {
-      make: String,
-      model: String,
-      year: Number
+    fullname: {type: String, require: true} ,
+    email: {type: String, require: true},
+    encryptedPassword: {type: String, require: true},
+    buyerInfo: {
+      carMake: String,
+      carModel: String,
+      carYear: Number
     },
-    username: String
+    sellerInfo: {
+      propertyType: String,
+      lotCap: Number
+    }
   }, {
     timestamps: true
   });

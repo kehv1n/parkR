@@ -7,11 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
+////////////// Components ///////////////////////
 import { CitiesPageComponent } from './cities-page/cities-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ThreePartPageComponent } from './three-part-page/three-part-page.component';
 import { BuyerRegistrationPageComponent } from './buyer-registration-page/buyer-registration-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ModalModule } from 'ng2-bootstrap/modal';
+
+////////////// Services ///////////////////////
+
+import { AuthSessionService } from './auth-session.service';
 
 
 
@@ -30,8 +36,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    ModalModule
   ],
-  providers: [],
+  providers: [AuthSessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

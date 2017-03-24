@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthSessionService } from '../auth-session.service';
 
 @Component({
   selector: 'app-buyer-registration-page',
@@ -10,9 +10,45 @@ import { Routes, RouterModule } from '@angular/router';
 })
 export class BuyerRegistrationPageComponent implements OnInit {
 
-  constructor() { }
+  loginInfo = [];
+  signupInfo = {};
+  //captures the details of whats inside our actual form in the HTML
+
+  formInfo = {
+    fullName: '',
+    email: '',
+    password: '',
+    encryptedPassword: ''
+  };
+
+
+  user: any;
+  error: string;
+
+  constructor(private myService: AuthSessionService) { }
 
   ngOnInit() {
   }
 
-}
+
+
+  newBuyer() {
+    const thePromise = this.myService.signup(this.formInfo);
+
+    thePromise.then((formInfo) => {
+      this.user = formInfo;
+      this.error = null;
+
+    });
+
+    thePromise.catch((err) => {
+      this.user = null;
+      this.error = err;
+      console.log(err);
+
+    });
+    console.log(this.formInfo);
+  }
+
+
+} //End of CLASS

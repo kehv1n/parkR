@@ -26,3 +26,11 @@ nav {
   border-color: black;
   border-top: 0;
 }
+
+
+#brandLogo {
+  width: 40px;
+  float: left;
+  margin-top: 9px;
+  margin-right: 10px;
+}
