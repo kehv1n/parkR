@@ -2,9 +2,9 @@
   const Schema = mongoose.Schema;
 
   const userSchema = new Schema({
-    fullname: {type: String, require: true} ,
-    email: {type: String, require: true},
-    encryptedPassword: {type: String, require: true},
+    fullname: {type: String, required: true} ,
+    email: {type: String, required: true},
+    encryptedPassword: {type: String, required: true},
     buyerInfo: {
       carMake: String,
       carModel: String,

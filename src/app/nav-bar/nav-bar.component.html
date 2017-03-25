@@ -16,7 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#cities"> cities</a></li>
-        <li><a routerLink="#" (click)="loginModal.show()"> sign in</a></li>
+        <li><a  href = "#" (click)="loginModal.show()"> sign in</a></li>
         <li><a routerLink="#"> become a host</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -24,20 +24,40 @@
 </nav>
 
 
-<!-- <div class="modal fade" bsModal #loginModal="bs-modal" [config]="{backdrop: 'static'}"
-     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+<div bsModal #loginModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left">Static modal</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="loginModal.hide()">
+        <h4 class="modal-title pull-left">Login</h4>
+        <button type="button" class="close pull-right" (click)="loginModal.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        This is static modal, backdrop click will not close it.
-        Click <b>&times;</b> to close modal.
+      <!---------- LOGIN POPUP STARTS HERE ---------------->
+
+        <div class="row text-center">
+          <h1>Welcome Back</h1>
+          <hr>
+          <div class="container">
+            <label for="name" class = "cols-sm-2 control-label">Email</label>
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" [(ngModel)] = "loginInfo.email" class="form-control" name="email" id="name" placeholder="Your Email" />
+            </div>
+            <label for="password">Password</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="password" [(ngModel)] = "loginInfo.encryptedPassword" class="form-control" name="password" id="name" placeholder="Password" />
+            </div>
+
+            <button (click) = "userLogin()" class = "btn btn-primary btn-lg btn-block login-button">Login</button>
+          </div>
+        </div>
+
+      <!---------- LOGIN ENDS ---------------->
       </div>
     </div>
   </div>
-</div> -->
+</div>

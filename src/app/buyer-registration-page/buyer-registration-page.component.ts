@@ -17,7 +17,6 @@ export class BuyerRegistrationPageComponent implements OnInit {
   formInfo = {
     fullName: '',
     email: '',
-    password: '',
     encryptedPassword: ''
   };
 
@@ -33,6 +32,7 @@ export class BuyerRegistrationPageComponent implements OnInit {
 
 
   newBuyer() {
+    console.log(this.formInfo)
     const thePromise = this.myService.signup(this.formInfo);
 
     thePromise.then((formInfo) => {

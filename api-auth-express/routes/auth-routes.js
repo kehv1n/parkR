@@ -18,31 +18,33 @@ authRoutes.get('/users',(req, res, next) => {
 
 authRoutes.post('/signup', (req, res, next) => {
   const fullname = req.body.fullname;
-  const email = req.body.email;
+  const email    = req.body.email;
   const encryptedPassword = req.body.encryptedPassword;
 
   //if blank
-  if(!email || !encryptedPassword) {
+  if (!email || !encryptedPassword) {
     res.status(400).json({message: 'Provide the email and password, dummy'});
     return;
   }
 
 
-  User.findOne({email}, '_id', (err, foundUser) => {
+  User.findOne({ email }, '_id', (err, foundUser) => {
     //if error in the query
+
     if (err) {
+
       res.status(500).json({message: 'Something went wrong, sorry'});
       return;
     }
 
     //if user found
     if (foundUser) {
-      res.status(400).json({message: 'The username already exists'});
+      res.status(400).json({message: 'This account already exists'});
       return;
     }
 
     ///Encrypt the password before saving...
-    const salt = bcrypt.genSaltSync(11);
+    const salt = bcrypt.genSaltSync(10);
     const hashPass = bcrypt.hashSync(encryptedPassword, salt);
 
     const theUser = new User({
@@ -54,14 +56,15 @@ authRoutes.post('/signup', (req, res, next) => {
     theUser.save((err) => {
       //if the save errors..
       if (err) {
-        res.status(400).json({message: 'Something went wrong...'});
+        res.status(500).json({message: 'Something went wrong...'});
         return;
       }
       req.login(theUser, (err) => {
          //if all else passes, automatically log in the user..
          // if login fucks up
         if (err){
-          res.status(400).json({message: 'Something went wrong...'});
+          console.log('error in the login itself');
+          res.status(500).json({message: 'Something went wrong...'});
           return;
         }
         res.status(200).json(req.user);
@@ -92,6 +95,7 @@ authRoutes.post('/login', (req, res, next) => {
       res.status(200).json(req.user);
     });
   });
+  passportFunction(req, res, next);
 });
 
 authRoutes.post('/logout', (req, res, next) => {

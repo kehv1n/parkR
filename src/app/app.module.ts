@@ -36,7 +36,7 @@ import { AuthSessionService } from './auth-session.service';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ModalModule
+    ModalModule.forRoot()
   ],
   providers: [AuthSessionService],
   bootstrap: [AppComponent]
