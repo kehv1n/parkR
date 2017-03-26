@@ -15,7 +15,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-              <input [(ngModel)]="formInfo.fullName" type="text" class="form-control" name="fullName" id="name" placeholder="Full Name" />
+              <input [(ngModel)]="signupInfo.fullname" type="text" class="form-control" name="fullname" id="name" placeholder="Full Name" />
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="email" id="email" placeholder="Your Email" [(ngModel)]="formInfo.email" />
+              <input type="text" class="form-control" name="email" id="email" placeholder="Your Email" [(ngModel)]="signupInfo.email" />
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"> <i class="fa fa-password" aria-hidden="true"> </i></span>
-              <input [(ngModel)]="formInfo.encryptedPassword" type="password" class="form-control" name="password" id="password" placeholder="Your Password" />
+              <input [(ngModel)]="signupInfo.encryptedPassword" type="password" class="form-control" name="password" id="password" placeholder="Your Password" />
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="make" id="make" placeholder="Honda" />
+              <input [(ngModel)]="signupInfo.buyerInfo.carMake" type="text" class="form-control" name="make" id="make" placeholder="Honda" />
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="model" id="model" placeholder="Civic" />
+              <input  [(ngModel)]="signupInfo.buyerInfo.carModel" type="text" class="form-control" name="model" id="model" placeholder="Civic" />
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
-              <select class="form-control" name="country" id="country" placeholder="Please select the year of manufacture">
+              <select [(ngModel)]="signupInfo.buyerInfo.carYear" class="form-control" name="country" id="country" placeholder="Please select the year of manufacture">
                                   <option>1990</option>
                                   <option>1991</option>
                                   <option>1992</option>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="form-group ">
-          <button type="button" (click)="newBuyer()"class="btn btn-primary btn-lg btn-block login-button">Sign Me Up</button>
+          <button type="button" (click)="signUp()"class="btn btn-primary btn-lg btn-block login-button">Sign Me Up</button>
         </div>
       </form>
     </div>

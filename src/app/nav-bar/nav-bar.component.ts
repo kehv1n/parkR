@@ -20,8 +20,9 @@ export class NavBarComponent implements OnInit {
   }
 
   userLogin() {
-    const thePromise = this.myService.login(this.loginInfo);
 
+    const thePromise = this.myService.login(this.loginInfo);
+  console.log(this.loginInfo)
     thePromise.then((userInfo) => {
       this.user = userInfo;
       this.error = null;

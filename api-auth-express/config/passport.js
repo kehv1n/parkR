@@ -4,45 +4,52 @@ const bcrypt        = require('bcrypt');
 const User          = require('../models/user-model.js');
 
 module.exports = function(passport) {
-  passport.use(new LocalStrategy((username, password, next) => {
-    User.findOne({username}, (err, foundUser) => {
+passport.use(new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'encryptedPassword',
+  passReqToCallback: true,
+  session: true
+},(req ,email, encryptedPassword, next) => {
+  User.findOne({email:email}, (err, foundUser) => {
+     console.log('found a user in the DB');
+     if (err) {  ///Check for errors in query
 
-      if (err) {  ///Check for errors in query
-        next(err);
-        return;
+       console.log('error in query check ');
+       next(err);
+       return;
+     }
+     if (!foundUser) {
+       console.log('failed to find user');// if there was no username (not found)
+       next(null, false, { message: 'Incorrect email'});
+       return;
       }
-      if (!foundUser) { // if there was no username (not found)
-        next(null, false, { message: 'Incorrect username'});
-        return;
-       }
 
-      if (!bcrypt.compareSyncy(password, foundUser.encryptedPassword)) {
-        next(null, false, { message: 'Incorrect password'});
-      }
+     if (!bcrypt.compareSync(encryptedPassword, foundUser.encryptedPassword)) {
 
-     next(null, foundUser); //if successfful!
-    });
-  }));
+       console.log('error in password');
+       next(null, false, { message: 'Incorrect password'});
+     }
 
-  //take the user object and tell me what to save about them in the session
-  // with the id in the session, you can take the Id and make a DB query and retrive
-  // all information about the foundUser
+    next(null, foundUser); //if successfful!
+   });
+ }));
 
-    passport.serializeUser((loggedInUser, cb) => {
-    cb(null, loggedInUser._id);
-  });
+ passport.serializeUser((loggedInUser, cb) => {
+   cb(null, loggedInUser._id);
+ });
 
-  // I have the ID of the user, find me the user in the DB
-  // Here is where you put the database stuff that you ALWAYS want displayed
-  // to the user!
+ // I have the ID of the user, find me the user in the DB
+ // Here is where you put the database stuff that you ALWAYS want displayed
+ // to the user!
 
-  passport.deserializeUser((userIdFromSession, cb) => {
-    User.findById(userIdFromSession, (err, userDocument) => {
-      if (err) {
-      cb(err);
-      return;
-      }
-      cb(null, userDocument);
-    });
-  });
+ passport.deserializeUser((userIdFromSession, cb) => {
+   User.findById(userIdFromSession, (err, userDocument) => {
+     if (err) {
+       cb(err);
+       return;
+     }
+     cb(null, userDocument);
+   });
+ });
+
 };

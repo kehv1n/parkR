@@ -63,7 +63,7 @@ authRoutes.post('/signup', (req, res, next) => {
          //if all else passes, automatically log in the user..
          // if login fucks up
         if (err){
-          console.log('error in the login itself');
+
           res.status(500).json({message: 'Something went wrong...'});
           return;
         }
@@ -76,14 +76,16 @@ authRoutes.post('/signup', (req, res, next) => {
 authRoutes.post('/login', (req, res, next) => {
   const passportFunction = passport.authenticate('local',
   (err, theUser, failureDetails) => {
+    console.log(theUser);
     if (err) {
       res.status(500).json({message: 'Something went wrong'});
       return;
 
     }
 
+
     if (!theUser) {
-      res.status(401).json({message: failureDetails});
+      res.status(401).json({message: 'Unauthorized Bruh'});
       return;
     }
 

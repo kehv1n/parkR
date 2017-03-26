@@ -11,14 +11,10 @@ import { AuthSessionService } from '../auth-session.service';
 export class BuyerRegistrationPageComponent implements OnInit {
 
   loginInfo = [];
-  signupInfo = {};
-  //captures the details of whats inside our actual form in the HTML
-
-  formInfo = {
-    fullName: '',
-    email: '',
-    encryptedPassword: ''
+  signupInfo = {
+    buyerInfo: { }
   };
+  //captures the details of whats inside our actual form in the HTML
 
 
   user: any;
@@ -31,14 +27,14 @@ export class BuyerRegistrationPageComponent implements OnInit {
 
 
 
-  newBuyer() {
-    console.log(this.formInfo)
-    const thePromise = this.myService.signup(this.formInfo);
+  signUp() {
+    console.log(this.signupInfo);
+    const thePromise = this.myService.signup(this.signupInfo);
+    thePromise.then((userInfo) => {
 
-    thePromise.then((formInfo) => {
-      this.user = formInfo;
+      this.user = userInfo;
       this.error = null;
-
+      console.log('success');
     });
 
     thePromise.catch((err) => {
@@ -47,7 +43,6 @@ export class BuyerRegistrationPageComponent implements OnInit {
       console.log(err);
 
     });
-    console.log(this.formInfo);
   }
 
 
