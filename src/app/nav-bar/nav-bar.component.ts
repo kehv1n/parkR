@@ -12,6 +12,7 @@ export class NavBarComponent implements OnInit {
 
   user: any;
   error: string;
+  myData: any;
 
 
   constructor( private myService: AuthSessionService ) { }
@@ -33,6 +34,15 @@ export class NavBarComponent implements OnInit {
       this.user = null;
       this.error = err;
     });
+  }
+
+  logout() {
+  this.myService.logout()
+  .then(() => {
+    this.user = null;
+    this.error = null;
+    })
+    .catch(err => this.error = err);
   }
 
 }

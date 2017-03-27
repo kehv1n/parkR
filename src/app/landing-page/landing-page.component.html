@@ -1,53 +1,56 @@
-<h1>Your time is important</h1>
-<h4> We help you save some...</h4>
-<div class='image'></div>
-<div class='container'>
-  <div class='row'>
-  </div>
-  <div class='row'>
-    <div class='hidden-xs col-sm-6 col-lg-7'>
+<!-- <div class="animated fadeIn"> -->
+
+  <h1 class = "animated fadeInDown" id = "headies">Your time is important</h1>
+  <h4 class = "animated fadeInDown" id = "headies"> We help you save some...</h4>
+  <div class='image animated fadeInDown'></div>
+  <div class='container'>
+    <div class='row'>
+    </div>
+    <div class='row'>
+      <div class='hidden-xs col-sm-6 col-lg-7'>
       </div>
       <div class='col-xs-12 col-sm-5 col-lg-4'>
-        <div class='login text-center'>
+        <div class='login text-center animated bounceInDown'>
           <div class="row One">
             <img class = "parking" src="../assets/images/parking.png" alt="">
             <h3> Park with parkR </h3>
             <a routerLink="/signup"> Sign Up   >  </a>
           </div>
           <div class="row Two">
-          <hr style = "height:1px; width: 80%; background-color: black;">
-          <form class="form-signin">
-        <h2 class="form-signin-heading">Sign Up & Host</h2>
+            <hr style = "height:1px; width: 80%; background-color: black;">
+            <form class="form-signin">
+              <h2 class="form-signin-heading">Sign Up & Host</h2>
 
-      <div class="fullname">
+              <div class="fullname">
+                <label for="name" class="cols-sm-2 control-label required">Full Name</label>
+                <input  type="name" id="inputFirst" class="form-control" placeholder="Full Name" required autofocus>
+              </div>
+              <div class="loginCreds">
 
-        <input type="name" id="inputFirst" class="form-control" placeholder="Full Name" required autofocus>
+                <label for="email" class="cols-sm-2 control-label required">Email</label>
+                <input   type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+                <label for="password" class="cols-sm-2 control-label required">Password</label>
+                <input  type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              </div>
+
+
+
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <button  onclick="document.location.href=`/hostRegistration`" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            </form>
+
+            <p class = "filler "> This is a bunch of random text down here that really serves no point other than to cover the remainding space of the form. Wow, this project really has me freakin tf out right now. Lets stay positive and hope for the best though. </p>
+
+
+
+          </div>
+        </div>
+
       </div>
-        <div class="loginCreds">
-
-
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-
-
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        </div>
-
-
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-      <p class = "filler"> This is a bunch of random text down here that really serves no point other than to cover the remainding space of the form. Wow, this project really has me freakin tf out right now. Lets stay positive and hope for the best though. </p>
-
-
-
-        </div>
-      </div>
-
-  </div>
-</div>
+    </div>
+<!-- </div> -->

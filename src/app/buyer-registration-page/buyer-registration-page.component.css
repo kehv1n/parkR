@@ -93,3 +93,9 @@ select {
   color: #90dced;
   text-shadow: 2px 2px #555
 }
+
+#headies {
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+  border-bottom: 5px solid #333;
+}

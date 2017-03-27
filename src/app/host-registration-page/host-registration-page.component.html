@@ -1,0 +1,88 @@
+<div class="row main">
+  <div class="image animated fadeInDown" id = "headies"></div>
+  <div class="container">
+    <h1 class = "title animated fadeIn"> Host Your Property</h1>
+    <hr class = "title-hr">
+    <!-- ///Start of Left side of the form///// -->
+    <div class=" left col-md-6 col-lg-6 col-sm-12 col-xs-12 animated fadeInUp">
+
+      <div class="main-login main-center">
+        <form class="form-horizontal" method="post" action="#">
+
+          <div class="form-group">
+            <label for="name" class="cols-sm-2 control-label">Full Name</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input [(ngModel)]="signupInfo.fullname" type="text" class="form-control" name="fullname" id="name" placeholder="Full Name" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="cols-sm-2 control-label">Email</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="text" [(ngModel)]="signupInfo.email" class="form-control" name="email" id="email" placeholder="Your Email"  />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="cols-sm-2 control-label required">Password</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"> <i class="fa fa-password" aria-hidden="true"> </i></span>
+                <input [(ngModel)]="signupInfo.encryptedPassword" type="password" class="form-control" name="password" id="password" placeholder="Your Password" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="country" class="cols-sm-2 control-label">Property Type</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+                <select [(ngModel)]="signupInfo.sellerInfo.propertyType" class="form-control" name="country" id="country" placeholder="Residential">
+                  <option>Residential / Personal Home</option>
+                  <option>Commercial / Business</option>
+                  <option>Field / Lot</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="Vehicle M" class="cols-sm-2 control-label">Lot Capacity</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
+                <input [(ngModel)]="signupInfo.sellerInfo.lotCap" type="number" class="form-control" name="lotCap" id="lotCap" placeholder="4 Cars" />
+                <span class="input-group-addon">Cars</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group ">
+            <button type="button" (click)="signUp()"class="btn btn-primary btn-lg btn-block login-button" onclick="document.location.href=`/userProfile`">Sign Me Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end of form LEFT  -->
+
+    <!-- start of right side of page -->
+    <div class=" right col-md-6 col-lg-6 col-sm-12 col-xs-12 animated fadeInUp">
+      <div class="content-right">
+
+        <img src="../assets/images/mortgage.png" alt="house-money-make">
+        <p> Making passive income has never been <b>easier</b>. Enjoy the comfort of your home
+          while managing parkR, at the same time. </p>
+      </div>
+
+    </div>
+    <!-- end of right side of page  -->
+  </div>
+</div>

@@ -1,33 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { AuthSessionService } from '../auth-session.service';
 
 @Component({
-  selector: 'app-buyer-registration-page',
-  templateUrl: './buyer-registration-page.component.html',
-  styleUrls: ['./buyer-registration-page.component.css']
-
+  selector: 'app-host-registration-page',
+  templateUrl: './host-registration-page.component.html',
+  styleUrls: ['./host-registration-page.component.css']
 })
-export class BuyerRegistrationPageComponent implements OnInit {
+export class HostRegistrationPageComponent implements OnInit {
 
   signupInfo = {
-    buyerInfo: { }
+    sellerInfo: { }
   };
-  //captures the details of whats inside our actual form in the HTML
-
 
   user: any;
   error: string;
 
-  constructor(private myService: AuthSessionService) { }
-
   ngOnInit() {
   }
+
+  constructor( private myService: AuthSessionService ) { }
 
 
 
   signUp() {
-    console.log(this.signupInfo);
     const thePromise = this.myService.signup(this.signupInfo);
     thePromise.then((userInfo) => {
 
@@ -44,5 +39,4 @@ export class BuyerRegistrationPageComponent implements OnInit {
     });
   }
 
-
-} //End of CLASS
+} ///end of class

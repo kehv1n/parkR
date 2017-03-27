@@ -18,6 +18,8 @@ import { ModalModule } from 'ng2-bootstrap/modal';
 ////////////// Services ///////////////////////
 
 import { AuthSessionService } from './auth-session.service';
+import { HostRegistrationPageComponent } from './host-registration-page/host-registration-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 
@@ -30,6 +32,8 @@ import { AuthSessionService } from './auth-session.service';
     ThreePartPageComponent,
     BuyerRegistrationPageComponent,
     HomePageComponent,
+    HostRegistrationPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

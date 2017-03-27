@@ -6,6 +6,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { BuyerRegistrationPageComponent } from './buyer-registration-page/buyer-registration-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppComponent } from './app.component';
+import { HostRegistrationPageComponent } from './host-registration-page/host-registration-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'cities',
     component: CitiesPageComponent
+  },
+  {
+    path: 'hostRegistration',
+    component: HostRegistrationPageComponent
+  },
+  {
+    path: 'userProfile',
+    component: ProfilePageComponent
   },
 
 ];
