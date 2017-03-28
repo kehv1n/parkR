@@ -9,7 +9,6 @@
   position: absolute;
   top: 90px;
   width: inherit;
-  background-color: blue;
   height: 50px;
 }
 
@@ -19,43 +18,63 @@
   text-transform: lowercase;
 }
 
-.welcome {
-
-}
-/*.header-content {
-  color: #333;
-  position: absolute;
-  top: 200px;
+.buttonsMain {
+  margin: 0 auto;
   text-align: center;
-  left: 650px;
-  text-transform: lowercase;
+}
+.buttonsMain > img {
+  width: 200px !important;
+  margin-bottom: 30px;
 }
 
-.header-content > h3 {
-  display: inline;
-  font-weight: 400;
-  float: left;
-  margin-top: 45px;
+
+
+
+.welcome {
+  font-weight: 500;
   font-size: 30px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
-.header-content > h2 {
-  display: inline;
-  font-weight: 100;
+.name {
+  font-weight: 200;
   font-size: 75px;
-  float: left;
 }
 
-.user-pic {
-  position: absolute;
-  top: 300px;
-  left: 760px;
+.mainButtons {
+  margin: 0 auto;
 }
-.user-pic > img {
-  width: 300px;
-}*/
 
-/*.button {
-  background-image: image(../assets/images/plus-icon.png);
-}*/
+
+.btn-circle.btn-lg {
+  width: 150px;
+  height: 150px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 100px;
+  background: none;
+  border: 1px solid #333;
+  display: inline;
+  margin-top: 10px;
+}
+
+.ion-model-s {
+  font-size: 65px;
+}
+
+.ion-email {
+  font-size: 65px;
+}
+
+.btn-circle.btn-lg:hover {
+  background: white;
+}
+
+.left {
+  margin-right:  40px;
+}
+
+.right {
+margin-left: 40px;
+}
