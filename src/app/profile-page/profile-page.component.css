@@ -34,16 +34,20 @@
   font-weight: 500;
   font-size: 30px;
   margin-right: 10px;
+  position: relative;
+  bottom: 15px;
 }
 
 .name {
-  font-weight: 200;
+  font-weight: 100;
   font-size: 75px;
 }
 
 .mainButtons {
   margin: 0 auto;
 }
+
+
 
 
 .btn-circle.btn-lg {
@@ -71,10 +75,31 @@
   background: white;
 }
 
+
 .left {
   margin-right:  40px;
 }
 
 .right {
 margin-left: 40px;
+}
+
+.search {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.search > input {
+  width: 30px;
+  height: 20px;
+}
+
+.search > label {
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  width: 50%;
+  margin-left: 240px;
 }
