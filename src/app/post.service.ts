@@ -13,7 +13,6 @@ export class PostService {
     return this.myHttp.get(this.BASE_URL+'/posts')
     .toPromise()
     .then(result => result.json());
-
     }
 
   newpost(post) {

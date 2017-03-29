@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SebmGoogleMap, SebmGoogleMapMarker  } from 'angular2-google-maps/core';
 
 import { Markers } from '../markers'
-import { AuthSessionService } from '../auth-session.service';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-allspots',
@@ -15,15 +15,19 @@ export class AllspotsComponent implements OnInit {
   lat: number;
   lng: number;
 
-  constructor() { }
+  constructor( private postService: PostService) { }
 
   ngOnInit() {
 
+    this.posts();
 
 
   }
 
-  
+  posts() {
+    const posts = this.postService.allposts();
+    
+  }
 
   // markerOne() {
   //   this.title = 'hello';
