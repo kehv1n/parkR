@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="header row">
+  <div class="header row animated fadeIn">
     <div class="header-content">
       <h2>Book Your Spot,</h2>
       <p>parking made easy.</p>
@@ -8,11 +8,21 @@
   <div class="row">
     <div class="container">
       <div class="mapStuff col-lg-12 col-md-12 col-sm-12">
-        <h1>Available Spots</h1>
+        <h1 class = "fadeInDown">Available Spots</h1>
         <hr>
-        <sebm-google-map [latitude]="lat" [longitude]="lng">
-          <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-            <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+        <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom] = "zoom">
+
+            <sebm-google-map-marker [title] = "onePost.price" *ngFor = "let onePost of postList"[latitude]="onePost.location.latitude" [longitude]="onePost.location.longitude">
+              <sebm-google-map-info-window  *ngFor = "let onePost of postList"[latitude]="onePost.location.latitude" [disableAutoPan]="true">
+                    <h5>matthew mcconaughey</h5>
+                    <hr style = "width: 100%; margin: 0 auto">
+                    <ul>
+                      <li>Price: $4.00 per hour</li>
+                      <li>Anemnities: Covered Parking, Handicap Accessible</li>
+                      <li>Availability: 4:00 pm - 12:00 am</li>
+                    </ul>
+                   </sebm-google-map-info-window>
+            </sebm-google-map-marker>
         </sebm-google-map>
       </div>
     </div>

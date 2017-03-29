@@ -3,11 +3,10 @@
 }
 .image{
   z-index: -1;
-  margin-top: 110px;
-  width: 100%;
   height: 500px;
-  background-image: url(https://d1a3f4spazzrp4.cloudfront.net/chameleon-assets/v1.0.0/c70b8eba-a194-42c9-b734-00bd27cda456/desk.jpg), url(https://c1.staticflickr.com/3/2609/3933749793_863426c5f9_b.jpg);;
-  background-position: left, right;
+  background-image: url(https://c1.staticflickr.com/1/538/19546052028_d589a1dc90_b.jpg);
+  background-position: center, center;
+  background-size: cover;
   background-repeat: no-repeat, no-repeat;
   margin-top: 210px;
 }

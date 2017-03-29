@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
   author: {type:Schema.Types.ObjectId, ref: 'User'},
-  location: {type: String, required: true},
+  location: {
+    latitude: Number,
+    longitude: Number,
+  },
   price: {type: Number, required: true, min: 1},
   description: {type: String},
   extras: {type: String}

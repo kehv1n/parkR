@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SebmGoogleMap, SebmGoogleMapMarker  } from 'angular2-google-maps/core';
+import { SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow  } from 'angular2-google-maps/core';
 
-import { Markers } from '../markers'
 import { PostService } from '../post.service';
 
 @Component({
@@ -12,8 +11,16 @@ import { PostService } from '../post.service';
 export class AllspotsComponent implements OnInit {
 
   title: string;
-  lat: number;
-  lng: number;
+  // Hardcoded to ironhacks "relative" position
+  // Should be made dynamic so that all users have it to their automatic loc
+  lat: Number = 25.766204;
+  lng: Number =  -80.19609;
+  zoom: Number = 16;
+  content: String = 'hello';
+
+  postList: Array<Object> = [];
+  errorMessage: String = '';
+
 
   constructor( private postService: PostService) { }
 
@@ -25,23 +32,16 @@ export class AllspotsComponent implements OnInit {
   }
 
   posts() {
-    const posts = this.postService.allposts();
-    
+    this.postService.allposts()
+    .then((postList) => {
+      this.postList = postList;
+      console.log(postList);
+    })
+    .catch((err) => {
+          this.errorMessage = 'There was an error. Try again Later.';
+    });
+
+
   }
 
-  // markerOne() {
-  //   this.title = 'hello';
-  //   this.lat = -10.54328;
-  //   this.lng = 128.78856;
-  // }
-  //
-  // markerTwo() {
-  //   this.title = 'hello';
-  //   this.lat = -12.54328;
-  //   this.lng = 128.78856;
-  // }
-
-
-
-
-}
+} // END OF CLASS
