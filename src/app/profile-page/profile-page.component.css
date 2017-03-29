@@ -1,8 +1,8 @@
 .header {
-  background: linear-gradient(rgba(255,255,255, .5), rgba(255,255,255, .5)),url(https://c2.staticflickr.com/6/5612/15323395107_a7a80b38ac_b.jpg);
+  background: linear-gradient(rgba(255,255,255, .5), rgba(255,255,255, .5)),url(https://c2.staticflickr.com/2/1628/25103445976_61f78a3eac_b.jpg);
   background-position: center center;
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
 }
 
 .header-content {
@@ -67,7 +67,7 @@
   font-size: 65px;
 }
 
-.ion-email {
+.ion-map{
   font-size: 65px;
 }
 

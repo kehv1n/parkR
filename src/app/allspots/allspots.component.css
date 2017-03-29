@@ -1,0 +1,36 @@
+.sebm-google-map-container {
+  height: 600px;
+  width: 100%;
+}
+
+.header {
+  background: linear-gradient(rgba(255,255,255, .2), rgba(255,255,255, .2)),url(https://c1.staticflickr.com/3/2061/32699845252_e0e9b3096e_b.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 80vh;
+  margin-top: 30px;
+  border-bottom: 5px solid #333;
+}
+
+.header-content {
+  position: absolute;
+  left: 600px;
+  top: 200px;
+  color: white;
+}
+
+.header-content > h2 {
+  font-size: 80px;
+  font-weight: normal;
+}
+.header-content > p {
+  font-size: 40px;
+}
+
+.hr {
+  width: 50%;
+}
+
+.mapStuff {
+  padding: 30px;
+}

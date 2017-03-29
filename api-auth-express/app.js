@@ -45,11 +45,18 @@ app.use(passport.session());
 const passportSetup = require('./config/passport');
 passportSetup(passport);
 //
-// const index = require('./routes/index');
-// app.use('/', index);
 
+
+
+////// ROUTES GO HERE /////////////////////////////////////////
 const authRoutes = require('./routes/auth-routes');
 app.use('/', authRoutes);
+
+
+const postRoutes = require('./routes/post-routes');
+app.use('/', postRoutes);
+
+////////////////////////////////////////////////////////////////
 
 // if theres no other routes that match, default to the angular html file
 app.use((req, res, next ) => {

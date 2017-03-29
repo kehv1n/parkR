@@ -1,0 +1,96 @@
+<div class="row main">
+  <div class="header">
+    <div class="header-box">
+      <h1>Find Your Passion</h1>
+      <hr>
+      <p>Welcome people into your community and help them belong anywhere</p>
+    </div>
+  </div>
+</div>
+<!-- FORM STARTS HERE  -->
+<div class="row formArea">
+  <div class=" container formHere">
+    <form class="form-horizontal" method="post" action="#">
+
+      <h1>Host My Spot</h1>
+      <hr>
+
+      <div class="form-group">
+        <label for="country" class="cols-sm-2 control-label">What kind of spot is this?</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+            <select [(ngModel)]="signupInfo.buyerInfo.carYear" class="form-control" name="country" id="country" placeholder="Please select the year of manufacture">
+              <option>Residential Property</option>
+              <option>Commercial / Business Property</option>
+              <option>Private Lot</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name" class="cols-sm-2 control-label">Location</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+            <span class="input-group-addon"><p>Address</p></span>
+            <input [(ngModel)]="signupInfo.fullname" type="text" class="form-control" name="fullname" id="name" placeholder="4200 N Ocean Dr" />
+
+            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+            <span class="input-group-addon"><p>City</p></span>
+            <input [(ngModel)]="signupInfo.fullname" type="text" class="form-control" name="fullname" id="name" placeholder="Jacksonville" />
+
+            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+            <span class="input-group-addon"><p>State</p></span>
+            <input [(ngModel)]="signupInfo.fullname" type="text" class="form-control" name="fullname" id="name" placeholder="Florida" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="cols-sm-2 control-label">Price</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+            <input type="text" [(ngModel)]="signupInfo.email" class="form-control" name="email" id="email" placeholder="Your Email"  />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="country" class="cols-sm-2 control-label">Availability</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+            <span class="input-group-addon"><p>Date:</p></span>
+            <input [(ngModel)]="signupInfo.buyerInfo.carMake" type="date" class="form-control" name="make" id="make"/>
+
+            <span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+            <span class="input-group-addon"><p>From:</p></span>
+            <input [(ngModel)]="signupInfo.buyerInfo.carMake" type="time" class="form-control" name="make" id="make"/>
+
+            <span class="input-group-addon"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></span>
+            <span class="input-group-addon"><p>To:</p></span>
+            <input [(ngModel)]="signupInfo.buyerInfo.carMake" type="time" class="form-control" name="make" id="make"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Vehicle M" class="cols-sm-2 control-label">description</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
+            <textarea name="description" rows="5" cols="149"></textarea>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-group ">
+        <button onclick="document.location.href=`/posts`" type="button" (click)="signUp()"class="btn btn-primary btn-lg btn-block login-button">Start Hosting</button>
+      </div>
+    </form>
+  </div>
+</div>

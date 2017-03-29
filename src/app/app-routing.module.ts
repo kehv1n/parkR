@@ -8,6 +8,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AppComponent } from './app.component';
 import { HostRegistrationPageComponent } from './host-registration-page/host-registration-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { NewSpotComponent } from './new-spot/new-spot.component';
+import { AllspotsComponent } from './allspots/allspots.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,15 @@ const routes: Routes = [
     path: 'userProfile',
     component: ProfilePageComponent
   },
+  {
+    path: 'newPost',
+    component: NewSpotComponent
+  },
+  {
+    path: 'posts',
+    component: AllspotsComponent
+  },
+
 
 ];
 @NgModule({

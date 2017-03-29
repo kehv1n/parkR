@@ -14,12 +14,16 @@ import { ThreePartPageComponent } from './three-part-page/three-part-page.compon
 import { BuyerRegistrationPageComponent } from './buyer-registration-page/buyer-registration-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ModalModule } from 'ng2-bootstrap/modal';
+import { HostRegistrationPageComponent } from './host-registration-page/host-registration-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { NewSpotComponent } from './new-spot/new-spot.component';
+import { AllspotsComponent } from './allspots/allspots.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 ////////////// Services ///////////////////////
 
 import { AuthSessionService } from './auth-session.service';
-import { HostRegistrationPageComponent } from './host-registration-page/host-registration-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { PostService } from './post.service';
 
 
 
@@ -34,15 +38,23 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     HomePageComponent,
     HostRegistrationPageComponent,
     ProfilePageComponent,
+    NewSpotComponent,
+    AllspotsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBBQAFfeUvYQf5gcWvaGPhHX6POAGIOwi4'
+    })
   ],
-  providers: [AuthSessionService],
+  providers: [
+    AuthSessionService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="header row">
+    <div class="header-content">
+      <h2>Book Your Spot,</h2>
+      <p>parking made easy.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="mapStuff col-lg-12 col-md-12 col-sm-12">
+        <h1>Available Spots</h1>
+        <hr>
+        <sebm-google-map [latitude]="lat" [longitude]="lng">
+          <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+            <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+        </sebm-google-map>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- <sebm-google-map [latitude]="lat" [longitude]="lng">
+  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+</sebm-google-map> -->
