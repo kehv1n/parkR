@@ -5,7 +5,8 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PostService {
-  BASE_URL='http://localhost:3000'
+  BASE_URL = `/api`
+  // BASE_URL='http://localhost:3000/api'
 
   constructor(private myHttp: Http) { }
 

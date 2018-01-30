@@ -10,6 +10,7 @@ const session      = require('express-session');
 const passport     = require('passport');
 const cors         = require('cors');
 
+
 mongoose.connect('mongodb://localhost/api-auth-express');
 const app = express();
 
@@ -52,9 +53,8 @@ passportSetup(passport);
 const authRoutes = require('./routes/auth-routes');
 app.use('/', authRoutes);
 
-
 const postRoutes = require('./routes/post-routes');
-app.use('/', postRoutes);
+app.use('/api', postRoutes);
 
 ////////////////////////////////////////////////////////////////
 

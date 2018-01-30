@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthSessionService {
-  BASE_URL='http://localhost:3000'
+  BASE_URL='http://parkrr.co/api'
   constructor(private myHttp: Http) { }
 
   signup(user) {

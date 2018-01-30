@@ -1,5 +1,6 @@
+//imports
 import { Component, OnInit } from '@angular/core';
-
+import { AuthSessionService } from '../auth-session.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class LandingPageComponent implements OnInit {
 
 
-  constructor( ) { }
+  constructor( public AuthService: AuthSessionService ) { }
+
+  //New User
+
+  OurUser: any;
+
 
   ngOnInit() {
+  }
+  
+  //sign's up the user with service
+  signUpUser() { 
+    console.log(this.OurUser);
+    this.AuthService.signup(this.OurUser);
   }
 
 

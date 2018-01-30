@@ -23,7 +23,7 @@
 
               <div class="fullname">
                 <label for="name" class="cols-sm-2 control-label required">Full Name</label>
-                <input  type="name" id="inputFirst" class="form-control" placeholder="Full Name" required autofocus>
+                <input #OurUser.fullName type="name" id="inputFirst" class="form-control" placeholder="Full Name" required autofocus>
               </div>
               <div class="loginCreds">
 
@@ -41,7 +41,8 @@
                   <input type="checkbox" value="remember-me"> Remember me
                 </label>
               </div>
-              <button  onclick="document.location.href=`/hostRegistration`" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+              <button (click)=signUpUser() class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+              <!-- <button  onclick="document.location.href=`/hostRegistration`" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button> -->
             </form>
 
             <p class = "filler "> This is a bunch of random text down here that really serves no point other than to cover the remainding space of the form. Wow, this project really has me freakin tf out right now. Lets stay positive and hope for the best though. </p>
